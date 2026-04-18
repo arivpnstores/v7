@@ -1,15 +1,37 @@
 <h1 align="center">Autoscript Tunneling v7</h1>
 
-## INSTALL SCRIPT SESUAI LANGKAH
-1. Jalankan perintah berikut untuk persiapan instalasi:
+## 🚀 INSTALL SCRIPT
+
+### 1. Persiapan Sistem
+
+Jalankan perintah berikut untuk setup awal:
+
 ```bash
-export DEBIAN_FRONTEND=noninteractive && rm -f /etc/resolv.conf && touch /etc/sysctl.conf && sed -i '/disable_ipv6/d' /etc/sysctl.conf && echo "nameserver 1.1.1.1" > /etc/resolv.conf && echo "nameserver 8.8.8.8" >> /etc/resolv.conf && echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf && sysctl -p && apt update -y && apt upgrade -y --fix-missing && apt install -y xxd bzip2 wget curl sudo lsof socat net-tools bc coreutils build-essential bsdmainutils screen dos2unix openvpn && update-grub && apt dist-upgrade -y
+rm -f /etc/resolv.conf
+touch /etc/sysctl.conf
+sed -i '/disable_ipv6/d' /etc/sysctl.conf
+echo "nameserver 1.1.1.1" > /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+sysctl -p
 ```
-2. Jalankan perintah berikut untuk memulai instalasi:
+
+---
+
+### 2. Update Package
+
+```bash
+apt update -y && apt upgrade -y --fix-missing && apt install --reinstall wget curl screen -y
+```
+
+---
+
+### 3. Install Script
+
 ```bash
 screen -S setup-session bash -c "wget -q https://raw.githubusercontent.com/arivpnstores/v7/main/install.sh && chmod +x install.sh && ./install.sh"
 ```
-
 ---
 
 ### Jika koneksi terputus saat instalasi
